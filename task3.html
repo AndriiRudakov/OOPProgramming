@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<body>
+    <script>
+        class Worker {
+            #experience = 1.2;
+            constructor(fullName, dayRate, workingDays){
+                this.fullName = fullName;
+                this.dayRate = dayRate;
+                this.workingDays = workingDays;
+            }
+            set setExp(exp){
+                this.#experience = exp;
+            }
+            get getExp(){
+                return this.#experience;
+            }
+            showSalary(){
+                let salary = this.dayRate * this.workingDays;
+                console.log(`${this.fullName}, salary: ${salary}`)
+            }
+            showSalaryWithExperience(){
+                let newSalary = this.dayRate * this.workingDays * this.#experience;
+                console.log(newSalary);
+            }
+        }
+
+            const worker1 = new Worker("John Johnson", 20, 23);
+
+            console.log(worker1.fullName);
+            worker1.showSalary();
+            console.log("New experience: " + worker1.getExp);
+            worker1.showSalaryWithExperience();
+            worker1.setExp = 1.5;
+            console.log("New experience: " + worker1.getExp);
+            worker1.showSalaryWithExperience();
+
+            const worker2 = new Worker("Tom Tomson", 48, 22);
+            worker2.showSalary();
+            const worker3 = new Worker("Andy Ander", 29, 23);
+            worker3.showSalary();
+    </script>
+</body>
+</html>

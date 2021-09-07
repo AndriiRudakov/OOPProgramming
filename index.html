@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+<body>
+    <script>
+        class Student {
+            constructor(fullName, surName, direction){
+            this.fullName = fullName,
+            this.surName = surName
+            this._direction = direction;
+            }
+            
+            get direction(){
+            return this._direction;
+            }
+            set direction(value){
+            this._direction = value;
+            }
+            
+            showFullName() {
+            return `Student: ${this.fullName} ${this.surName}`
+            }
+            
+            nameIncludes(data){
+            if(data == this.fullName){
+                return true;
+            } else {
+                return false;
+            }
+            }
+            static studentBuilder(){
+            let stud3 = new Student("Ihor", "Kohut");
+            stud3.direction = "qc";
+            return stud3;
+            }
+        }
+        
+        let stud1 = new Student("Ivan", "Petrenko", "web");
+        let stud2 = new Student("Sergii", "Koval", "python");
+        
+        
+        console.log(stud1.nameIncludes('Ivan'));
+        console.log(stud1.nameIncludes('Denysenko'));
+        
+        
+        
+      </script>
+</body>
+</html>
